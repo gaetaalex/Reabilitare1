@@ -81,7 +81,7 @@ public class AgendaHelper implements IHelper{
         String observacao = view.getjTextAreaObservacao().getText();
         String status = (String) view.getjComboBoxStatus().getSelectedItem();
         
-        Agendamentos agendamentos = new Agendamentos(id, pacientes, servicos, valor, data, hora, observacao,  status);
+        Agendamentos agendamentos = new Agendamentos(id, pacientes, servicos, valor, dataHora, observacao,  status);
         return agendamentos;
         //new Agendamentos()
         
