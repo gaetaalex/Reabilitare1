@@ -20,7 +20,16 @@ public class AgendaController {
         this.view = view;
         this.helper = new AgendaHelper(view);
     }
-
+    
+        public void atualizaTabela(){
+        //buscar lista com os agendamentos
+        AgendamentoDAO agendamentoDAO = new AgendamentoDAO();
+        ArrayList<Agendamentos> agendamentos = agendamentoDAO.selectAll();
+        
+        //exibir a lista na view
+        helper.preencherTabela(agendamentos);
+    }
+        
     public void atualizaPacientes(){
         //Buscar pacientes no db
         PacientesDAO pacientesDAO = new PacientesDAO();
@@ -42,14 +51,6 @@ public class AgendaController {
          helper.setValor(servicos.getValor());
     }
      
-        public void atualizaTabela(){
-        //buscar lista com os agendamentos
-        AgendamentoDAO agendamentoDAO = new AgendamentoDAO();
-        ArrayList<Agendamentos> agendamentos = agendamentoDAO.selectAll();
-        
-        //exibir a lista na view
-        helper.preencherTabela(agendamentos);
-    }
      public void agendar(){
         //buscar obj agendamento da tela
         Agendamentos agendamentos = (Agendamentos) helper.obterModelo();

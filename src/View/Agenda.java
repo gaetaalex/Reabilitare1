@@ -290,6 +290,7 @@ public class Agenda extends javax.swing.JFrame {
         this.controller.atualizaPacientes();
         this.controller.atualizaServicos();
         this.controller.atualizaValor();
+        
     }
 
     public JTable getjTableAgenda() {
